@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+.navigation{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home,
+.practice,
+.dictionary {
+  margin-left: 35px;
+  text-decoration: none;
+  color: #022a71;
+  font-size: 24px;
+
+  .practice{
+    padding-right: 10px;
+  }
+
+  &.active {
+    color: #f19307;
+  }
+}
+
