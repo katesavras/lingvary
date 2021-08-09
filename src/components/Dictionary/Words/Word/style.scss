@@ -1,0 +1,25 @@
+.word {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.word__eng {
+  font-size: 20px;
+  color: #022a71;
+  font-weight: bold;
+}
+
+.word__rus {
+  font-size: 20px;
+}
+
+.word__del {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+}
+
+

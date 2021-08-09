@@ -12,10 +12,17 @@ export const NewWordForm = ({onFormClose}) => {
     const rusWordInputHandler = (e) => setRusWord(e.target.value);
 
     const addNewWord = useCallback(() => {
-        dispatch(createWords(engWord, rusWord));
+        if (!engWord) return engWord;
+        if (!rusWord) return rusWord;
+
+    dispatch(createWords(
+        engWord[0].toLowerCase() + engWord.slice(1),
+        rusWord[0].toLowerCase() + rusWord.slice(1))
+    );
 
         setEngWord('')
         setRusWord('')
+
     }, [dispatch, engWord, rusWord]);
 
     return (

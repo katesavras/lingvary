@@ -1,8 +1,11 @@
+import './style.scss'
+export const Search = ({onSearch}) => {
 
-export const Search = ({ onSearch }) => {
-  const handleSearch = (e) => onSearch(e.target.value);
+  const handleSearch = (e)=> {
+    onSearch(e.target.value)
+  }
 
   return (
-    <input placeholder="Search..." type="text" onChange={handleSearch} />
+    <input className='search' placeholder="Search..." type="text" onChange={handleSearch}/>
   )
 }
