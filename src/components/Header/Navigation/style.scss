@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
-.navigation{
+.navigation {
   width: 70%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .home,
@@ -12,10 +12,10 @@
 .dictionary {
   margin-left: 35px;
   text-decoration: none;
-  color: #2459b1;
+  color: #032c76;
   font-size: 24px;
 
-  .practice{
+  .practice {
     padding-right: 10px;
   }
 

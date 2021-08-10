@@ -2,8 +2,9 @@ import {useState, useCallback} from "react";
 import {Modal} from "../../UI/Modal";
 import {useDispatch} from "react-redux";
 import {createWords} from "../../../middlewares/words";
+import './style.scss'
 
-export const NewWordForm = ({onFormClose}) => {
+export const NewWordForm = ({onFormClose, isNotification}) => {
     const [engWord, setEngWord] = useState('')
     const [rusWord, setRusWord] = useState('')
     const dispatch = useDispatch()
@@ -22,6 +23,8 @@ export const NewWordForm = ({onFormClose}) => {
 
         setEngWord('')
         setRusWord('')
+
+        isNotification()
 
     }, [dispatch, engWord, rusWord]);
 

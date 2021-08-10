@@ -20,7 +20,18 @@
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  width: 45%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px grey;
+  width: 30%;
+
+  h2{
+    color: #032c76;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 .close {
@@ -28,6 +39,7 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+
 }
 
 .close:hover,
@@ -39,6 +51,25 @@
 
 .modal_control {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+}
+
+.modal__btn{
+  margin-bottom: 20px;
+  width: 35%;
+  outline: none;
+  border: 1px solid orange;
+  color: white;
+  background-color: orange;
+  border-radius: 20px;
+  cursor: pointer;
+
+  height: 30px;
+  transition: 30ms;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 }

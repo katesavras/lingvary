@@ -1,25 +1,36 @@
+.word__wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
 .word {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+
 }
 
 .word__eng {
+  width: 30%;
+  text-align: left;
   font-size: 20px;
   color: #022a71;
   font-weight: bold;
 }
 
 .word__rus {
+  width: 50%;
   font-size: 20px;
 }
 
 .word__del {
   width: 20px;
   height: 20px;
-  background-color: orange;
+  background-color: #61c9c9;
+
   color: white;
   text-align: center;
+  margin-right: 20px;
 }
 
 

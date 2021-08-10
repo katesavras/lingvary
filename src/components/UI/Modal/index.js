@@ -25,11 +25,11 @@ export const ModalComponent = ({onCancel, title, children, onSubmit}) => {
             <div className="modal" onClick={onCancel}> </div>
             <div className="modal_content">
                 <span className="close" onClick={onCancel}>&times;</span>
-                <h3>{title}</h3>
+                <h2>{title}</h2>
                 {children}
                 <div className="modal_control">
-                    <button onClick={onCancel}>Cancel</button>
-                    <button onClick={onSubmit}>Ok</button>
+                    {/*<button onClick={onCancel}>Cancel</button>*/}
+                    <button className='modal__btn' onClick={onSubmit}>Ok</button>
                 </div>
             </div>
         </>

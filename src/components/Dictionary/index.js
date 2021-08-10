@@ -4,10 +4,13 @@ import {Words} from "./Words";
 import {Search} from "./Search";
 import {useSelector} from "react-redux";
 import './style.scss'
+import {NotificationComponent} from "./Notification";
+
 
 export const Dictionary = () => {
     const words = useSelector((state) => state.words);
     const [isFormOpened, setIsFormOpened] = useState(false);
+    const [isNotification, setIsNotification] = useState(false);
     const [searchedValue, setSearchedValue] = useState('')
 
     const searchHandler = (value) => {
@@ -19,6 +22,13 @@ export const Dictionary = () => {
 
     const closeFormHandler = () => {
         setIsFormOpened(false);
+    };
+
+    const openNotificationHandler = () => {
+        setIsNotification(true);
+    };
+    const closeNotificationHandler = () => {
+        setIsNotification(false);
     };
 
     const filteredValue = words.filter(({eng, rus}) => {
@@ -33,8 +43,9 @@ export const Dictionary = () => {
                 <p>My dictionary (<span>{words.length}</span>)</p>
                 <Search onSearch={searchHandler}/>
             </div>
-            {isFormOpened && <NewWordForm onFormClose={closeFormHandler}/>}
+            {isFormOpened && <NewWordForm onFormClose={closeFormHandler} isNotification={openNotificationHandler}/>}
             <Words words={filteredValue}/>
+            {isNotification ? <NotificationComponent onClose={closeNotificationHandler}/> : null}
         </div>
     )
 }

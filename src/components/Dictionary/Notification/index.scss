@@ -1,0 +1,18 @@
+.notification_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  color: #02024c;
+  border-radius: 5px;
+  border: 1px solid #b9cdf1;
+  background-color: #b9cdf1;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+
