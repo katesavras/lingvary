@@ -13,6 +13,9 @@ export const NewWordForm = ({onFormClose, isNotification}) => {
     const rusWordInputHandler = (e) => setRusWord(e.target.value);
 
     const addNewWord = useCallback(() => {
+        if (!isNaN(engWord)) return null;
+        if (!isNaN(rusWord)) return null;
+
         if (!engWord) return engWord;
         if (!rusWord) return rusWord;
 

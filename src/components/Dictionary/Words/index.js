@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {getAllWords} from "../../../middlewares/words";
 import {Word} from "./Word";
 
-export const Words = ({words}) => {
+export const Words = ({words, onDelete}) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export const Words = ({words}) => {
 
     return (
         <div>
-            {words.map((word) =>{return <Word key={word.id} word={word}/>})}
+            {words.map((word) =>{return <Word key={word.id} word={word} onDelete={onDelete}/>})}
         </div>
     )
 }

@@ -1,12 +1,12 @@
-import {useDispatch} from "react-redux";
-import {removeWord} from "../../../../middlewares/words";
 import './style.scss'
 
-export const Word = ({word: {eng, rus, id, key,}}) => {
-    const dispatch = useDispatch()
+
+export const Word = ({word: {eng, rus, id, key}, onDelete}) => {
+
     const handleClick = () => {
-        dispatch(removeWord(key))
+        onDelete(key)
     }
+
     return (
         <div className='word__wrapper'>
             <div className='word'>
