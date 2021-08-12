@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {NewWordForm} from "./NewWordForm";
-import {Words} from "./Words";
-import {Search} from "./Search";
-import {useDispatch, useSelector} from "react-redux";
 import './style.scss'
-import {NotificationComponent} from "./Notification";
+import {NewWordForm} from "./components/NewWordForm";
+import {Words} from "./components/Words";
+import {Search} from "./components/Search";
+import {useDispatch, useSelector} from "react-redux";
 import {removeWord} from "../../middlewares/words";
+import {Notification} from "./components/Notification";
 import {Modal} from "../UI/Modal";
 
 
@@ -66,7 +66,7 @@ export const Dictionary = () => {
                 <Search onSearch={searchHandler}/>
             </div>
 
-            {isFormOpened && <NewWordForm onFormClose={closeFormHandler} isNotification={openNotificationHandler}/>}
+            {isFormOpened && <NewWordForm onFormClose={closeFormHandler} onNotificationOpen={openNotificationHandler}/>}
 
             <Words words={filteredValue} onDelete={openModalHandler}/>
 
@@ -80,7 +80,7 @@ export const Dictionary = () => {
             }
 
             {isNotification ?
-                <NotificationComponent onClose={closeNotificationHandler}/>
+                <Notification onClose={closeNotificationHandler}/>
                 : null
             }
         </>

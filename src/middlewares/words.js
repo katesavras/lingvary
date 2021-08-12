@@ -6,7 +6,6 @@ import {v4} from 'uuid';
 export const getAllWords = () => async (dispatch) => {
     const response = await fetch(`https://lingvary-6f32e-default-rtdb.firebaseio.com/words.json`);
     const body =  await response.json();
-    console.log(body)
     return dispatch(getWordsAction(normalizeWords(body)))
 }
 

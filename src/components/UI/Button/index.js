@@ -6,8 +6,8 @@ export const Button = ({label, onClick}) => {
         <button className="btn" onClick={onClick}>{label}</button>
     )
 }
-//
-// Button.propTypes = {
-//     label: PropTypes.string.isRequired,
-//     onClick: PropTypes.func.isRequired,
-// }
+
+Button.propTypes = {
+    label: PropTypes.string,
+    onClick: PropTypes.func,
+}

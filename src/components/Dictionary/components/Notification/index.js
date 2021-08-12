@@ -1,11 +1,13 @@
 import "./index.scss";
 import PropTypes from "prop-types";
 import ReactDom from 'react-dom'
-import {withPortal} from "../../../hocs/withPortal";
+import {withPortal} from "../../../../hocs/withPortal";
 import {useEffect} from "react";
 
 export const NotificationComponent = ({onClose}) => {
-    useEffect(() => {setTimeout(() => onClose(), 2000)})
+    useEffect(() => {
+      setTimeout(() => onClose(), 2000)
+    })
 
     return (
         ReactDom.createPortal((<div className='notification_wrapper'>
@@ -15,8 +17,8 @@ export const NotificationComponent = ({onClose}) => {
     )
 }
 
-// NotificationComponent.propTypes = {
-//     onclose: PropTypes.func,
-// }
+NotificationComponent.propTypes = {
+    onClose: PropTypes.func,
+}
 
 export const Notification = withPortal(NotificationComponent)

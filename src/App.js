@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="App">
             <Header/>
-            <div>
+            <>
                 <Switch>
                     <Route path="/" exact> <Redirect to="/home"/> </Route>
                     <Route path="/home"><HomePage/></Route>
@@ -18,7 +18,7 @@ function App() {
                     <Route path="/practice"> <PracticePage/></Route>
                     <Route path="*"><PageNotFound/></Route>
                 </Switch>
-            </div>
+            </>
         </div>
     );
 }

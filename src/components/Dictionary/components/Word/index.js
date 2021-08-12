@@ -1,4 +1,5 @@
 import './style.scss'
+import PropTypes from "prop-types";
 
 
 export const Word = ({word: {eng, rus, id, key}, onDelete}) => {
@@ -18,4 +19,9 @@ export const Word = ({word: {eng, rus, id, key}, onDelete}) => {
             <hr className='line'/>
         </div>
     )
+}
+
+Word.propTypes = {
+    onDelete: PropTypes.func,
+    words: PropTypes.object,
 }

@@ -37,11 +37,11 @@ export const ModalComponent = ({onCancel, title, children, onSubmit}) => {
 }
 
 
-// ModalComponent.propTypes = {
-//     title: PropTypes.string.isRequired,
-//     children: PropTypes.node.isRequired,
-//     onCancel: PropTypes.func.isRequired,
-//     onSubmit: PropTypes.func.isRequired,
-// }
+ModalComponent.propTypes = {
+    title: PropTypes.string,
+    children: PropTypes.node.isRequired,
+    onCancel: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+}
 
 export const Modal = withPortal(ModalComponent);

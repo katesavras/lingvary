@@ -1,10 +1,12 @@
-import {useState, useCallback} from "react";
-import {Modal} from "../../UI/Modal";
+import {useCallback, useState} from "react";
+import {Modal} from "../../../UI/Modal";
 import {useDispatch} from "react-redux";
-import {createWords} from "../../../middlewares/words";
+import {createWords} from "../../../../middlewares/words";
 import './style.scss'
+import PropTypes from "prop-types";
 
-export const NewWordForm = ({onFormClose, isNotification}) => {
+
+export const NewWordForm = ({onFormClose, onNotificationOpen}) => {
     const [engWord, setEngWord] = useState('')
     const [rusWord, setRusWord] = useState('')
     const dispatch = useDispatch()
@@ -19,15 +21,15 @@ export const NewWordForm = ({onFormClose, isNotification}) => {
         if (!engWord) return engWord;
         if (!rusWord) return rusWord;
 
-    dispatch(createWords(
-        engWord[0].toLowerCase() + engWord.slice(1),
-        rusWord[0].toLowerCase() + rusWord.slice(1))
-    );
+        dispatch(createWords(
+            engWord[0].toLowerCase() + engWord.slice(1),
+            rusWord[0].toLowerCase() + rusWord.slice(1))
+        );
 
         setEngWord('')
         setRusWord('')
 
-        isNotification()
+        onNotificationOpen()
 
     }, [dispatch, engWord, rusWord]);
 
@@ -53,4 +55,9 @@ export const NewWordForm = ({onFormClose, isNotification}) => {
             </form>
         </Modal>
     )
+}
+
+NewWordForm.propTypes = {
+    onFormClose: PropTypes.func,
+    onNotificationOpen: PropTypes.func,
 }
