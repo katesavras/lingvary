@@ -68,7 +68,7 @@ export const Dictionary = () => {
 
             {isFormOpened && <NewWordForm onFormClose={closeFormHandler} onNotificationOpen={openNotificationHandler}/>}
 
-            <Words words={filteredValue} onDelete={openModalHandler}/>
+            <Words    words={filteredValue} onDelete={openModalHandler}/>
 
             {isModalShown
                 ? <Modal title=' '

@@ -5,9 +5,13 @@ import {withPortal} from "../../../../hocs/withPortal";
 import {useEffect} from "react";
 
 export const NotificationComponent = ({onClose}) => {
+
     useEffect(() => {
-      setTimeout(() => onClose(), 2000)
-    })
+        const id = setTimeout(() => {
+            onClose();
+        }, 1500);
+        return () => clearTimeout(id);
+    }, [onClose])
 
     return (
         ReactDom.createPortal((<div className='notification_wrapper'>

@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 
 export const Words = ({words, onDelete}) => {
     const dispatch = useDispatch()
-
     useEffect(() => {
         dispatch(getAllWords())
     }, [dispatch])
