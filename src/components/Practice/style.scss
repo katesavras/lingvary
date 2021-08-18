@@ -1,3 +1,12 @@
+.card__control{
+  width: 100%;
+  height: 70px;
+  //background-color: #c9daf8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .card__wrapper{
   display: flex;
   flex-direction: column;
