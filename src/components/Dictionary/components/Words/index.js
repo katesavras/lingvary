@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {getAllWords} from "../../../../middlewares/words";
 import {Word} from "../Word";
 import PropTypes from "prop-types";
+import "./style.scss"
 
 
 export const Words = ({words, onDelete}) => {
@@ -13,7 +14,7 @@ export const Words = ({words, onDelete}) => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className="words__wrapper">
             {words.map((word) =>{return <Word key={word.id} word={word} onDelete={onDelete}/>})}
         </div>
     )
@@ -22,5 +23,4 @@ export const Words = ({words, onDelete}) => {
 Words.propTypes = {
     onDelete: PropTypes.func,
     words:PropTypes.array,
-
 }

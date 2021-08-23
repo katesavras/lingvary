@@ -1,5 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './style.scss'
+import PropTypes from "prop-types";
+
 
 export const InputWord = ({onRightArrow, onLeftArrow, isMistake}) => {
     const [inputValue, setInputValue] = useState(' ')
@@ -9,8 +11,10 @@ export const InputWord = ({onRightArrow, onLeftArrow, isMistake}) => {
     }
 
     const rightArrowClickHandler = () => {
+        console.log(inputValue)
         onRightArrow(inputValue.trim())
         setInputValue('')
+        console.log("уыскмпу")
     }
     const leftArrowClickHandler = () => {
          setInputValue(onLeftArrow)
@@ -18,8 +22,8 @@ export const InputWord = ({onRightArrow, onLeftArrow, isMistake}) => {
 
     return (
         <div className='input__wrapper'>
-            <span className="arrow" onClick={leftArrowClickHandler}> ? </span>
-            <input  className ={isMistake ? ' mistake' : null}
+            <span className="arrow" onClick={leftArrowClickHandler}>&#63;</span>
+            <input  className = {isMistake ? ' mistake' : null}
                     autoFocus
                     type="text"
                     onChange={inputHandler}
@@ -27,4 +31,10 @@ export const InputWord = ({onRightArrow, onLeftArrow, isMistake}) => {
             <span className="arrow" onClick={rightArrowClickHandler}>&#9002;</span>
         </div>
     )
+}
+
+InputWord.propTypes = {
+    onRightArrow: PropTypes.func,
+    onLeftArrow:PropTypes.string,
+    isMistake:PropTypes.bool,
 }

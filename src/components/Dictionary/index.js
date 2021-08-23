@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {removeWord} from "../../middlewares/words";
 import {Notification} from "./components/Notification";
 import {Modal} from "../UI/Modal";
+import {Pagination} from "./components/Pagination";
 
 
 export const Dictionary = () => {
@@ -17,16 +18,23 @@ export const Dictionary = () => {
     const [isFormOpened, setIsFormOpened] = useState(false);
     const [isNotification, setIsNotification] = useState(false);
     const [isModalShown, setModalShown] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1)
+    const [wordsPerPage] = useState(8)
 
+    const filteredWords = words.filter(({eng, rus}) => {
+        return eng.toLowerCase().includes(searchedValue.toLowerCase())
+            || rus.toLowerCase().includes(searchedValue.toLowerCase())
+    })
+
+    const indexOfLastWord = currentPage * wordsPerPage
+    const indexOfFirstWord = indexOfLastWord - wordsPerPage
+    const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord)
+
+    const paginateHandler = (pageNumber) => setCurrentPage(pageNumber)
 
     const searchHandler = (value) => {
         setSearchedValue(value)
     }
-
-    const filteredValue = words.filter(({eng, rus}) => {
-        return eng.toLowerCase().includes(searchedValue.toLowerCase())
-            || rus.toLowerCase().includes(searchedValue.toLowerCase())
-    })
 
     const openFormHandler = () => {
         setIsFormOpened(true)
@@ -60,29 +68,40 @@ export const Dictionary = () => {
 
     return (
         <>
-            <div className='dictionary__control'>
+            <div className='dictionary__header'>
                 <button onClick={openFormHandler}>Add word</button>
                 <p>My dictionary (<span>{words.length}</span>)</p>
                 <Search onSearch={searchHandler}/>
             </div>
 
-            {isFormOpened && <NewWordForm onFormClose={closeFormHandler} onNotificationOpen={openNotificationHandler}/>}
+            <div className="dictionary__main">
+                <Words words={currentWords} onDelete={openModalHandler}/>
+            </div>
 
-            <Words    words={filteredValue} onDelete={openModalHandler}/>
+            <p className='noWords'>{!filteredWords.length && "No such words..."} </p>
 
-            {isModalShown
-                ? <Modal title=' '
-                         onSubmit={deleteWordHandler}
-                         onCancel={closeModalHandler}>
-                    <p className='modal__dictionary_p'>Are you sure you want <br/> to delete this word?</p>
+            <div className='dictionary__footer'>
+                {filteredWords.length
+                    ? <Pagination
+                        wordsPerPage={wordsPerPage}
+                        totalWords={filteredWords.length}
+                        paginate={paginateHandler}
+                    />
+                    : null
+                }
+            </div>
+
+            {isFormOpened && <NewWordForm onFormClose={closeFormHandler}
+                                          onNotificationOpen={openNotificationHandler}/>}
+            {isModalShown ? <Modal title=' '
+                                   onSubmit={deleteWordHandler}
+                                   onCancel={closeModalHandler}>
+                    <p className='dictionary__modal_p'>Are you sure you want <br/> to delete this word?</p>
                 </Modal>
                 : null
             }
 
-            {isNotification ?
-                <Notification onClose={closeNotificationHandler}/>
-                : null
-            }
+            {isNotification ? <Notification onClose={closeNotificationHandler}/> : null}
         </>
     )
 }

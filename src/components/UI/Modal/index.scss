@@ -11,7 +11,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal_content {
+.modal__content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,40 +24,37 @@
   box-shadow: 2px 2px 10px grey;
   width: 30%;
 
+  span{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 
-  h2{
+    &:hover,
+    &:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  h2 {
     color: #032c76;
     margin-top: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal_control {
+.modal__control {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
 
-.modal__btn{
+.modal__control_btn {
   margin-bottom: 20px;
   width: 35%;
   outline: none;
@@ -66,11 +63,10 @@
   background-color: orange;
   border-radius: 20px;
   cursor: pointer;
-
   height: 30px;
   transition: 30ms;
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
 }

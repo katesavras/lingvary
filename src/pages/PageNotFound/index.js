@@ -1,7 +1,8 @@
 import React from "react";
+import picture from "./img/pageNotFound.jpg"
 
-export const PageNotFound =()=>{
-    return(
-        <div>Page not found</div>
+export const PageNotFound =()=> {
+    return (
+        <img src={picture} alt="page not found" className='pageNotFound' style={{width: '100%'}}/>
     )
 }

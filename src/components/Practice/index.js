@@ -25,8 +25,7 @@ export const Practice = () => {
 
     const onRightArrowHandler = (inputValue) => {
         if (isEnglish && inputValue === cardWords[wordIndex].rus
-            || !isEnglish && inputValue === cardWords[wordIndex].eng)
-        {
+            || !isEnglish && inputValue === cardWords[wordIndex].eng) {
             setIsMistake(false)
             wordIndex === cardWords.length - 1
                 ? setWordIndex(0)
@@ -43,9 +42,8 @@ export const Practice = () => {
 
 
     return (
-
-        <div className='card__wrapper'>
-            <div className='card__control'>
+        <div className='practice'>
+            <div className='practice__switcher'>
                 <Switcher onChangeLang={onChangeLangHandler}/>
             </div>
             {cardWords.length !== 0 &&

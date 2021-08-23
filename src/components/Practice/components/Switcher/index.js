@@ -1,5 +1,6 @@
 import React from "react";
 import './style.scss'
+import PropTypes from "prop-types";
 
 
 export const Switcher = ({onChangeLang}) => {
@@ -13,15 +14,17 @@ export const Switcher = ({onChangeLang}) => {
 
     return (
         <div className="switcher">
-            <input onClick={switchEngHandler} type="radio" name="balance" value="yin" id="yin"
-                   className="switcher__input switcher__input--yin"
-                   checked=""/>
-            <label htmlFor="yin" className="switcher__label">english</label>
-
-            <input onClick={switchRusHandler} type="radio" name="balance" value="yang" id="yang"
-                   className="switcher__input switcher__input--yang"/>
-            <label htmlFor="yang" className="switcher__label">russian</label>
+            <input onClick={switchEngHandler} type="radio" name="language" value="eng" id="eng"
+                   className="switcher__input"
+                   checked="" readOnly/>
+            <label htmlFor="eng" className="switcher__label">english</label>
+            <input onClick={switchRusHandler} type="radio" name="language" value="rus" id="rus"
+                   className="switcher__input switcher__input_rus"/>
+            <label htmlFor="rus" className="switcher__label">russian</label>
             <span className="switcher__toggle"> </span>
         </div>
     )
+}
+Switcher.prototype={
+    onChangeLang: PropTypes.func,
 }
