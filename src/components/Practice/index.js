@@ -24,8 +24,8 @@ export const Practice = () => {
 
 
     const onRightArrowHandler = (inputValue) => {
-        if (isEnglish && inputValue === cardWords[wordIndex].rus
-            || !isEnglish && inputValue === cardWords[wordIndex].eng) {
+        if ((isEnglish && inputValue === cardWords[wordIndex].rus)
+            || (!isEnglish && inputValue === cardWords[wordIndex].eng)) {
             setIsMistake(false)
             wordIndex === cardWords.length - 1
                 ? setWordIndex(0)

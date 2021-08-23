@@ -31,7 +31,7 @@ export const NewWordForm = ({onFormClose, onNotificationOpen}) => {
 
         onNotificationOpen()
 
-    }, [dispatch, engWord, rusWord]);
+    }, [dispatch, engWord, rusWord, onNotificationOpen]);
 
     return (
         <Modal
