@@ -1,10 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './style.scss'
 import PropTypes from "prop-types";
 
 
 export const InputWord = ({onRightArrow, onLeftArrow, isMistake}) => {
     const [inputValue, setInputValue] = useState(' ')
+
+    useEffect(() => {
+        window.addEventListener('keydown', eventHandler)
+        return () => {
+            window.removeEventListener('keydown', eventHandler)
+        }
+    })
+
+    const eventHandler = (event) => {
+          if(event.code === "Enter"){
+            rightArrowClickHandler()
+        }
+    }
 
     const inputHandler = (e) => {
         setInputValue(e.target.value)

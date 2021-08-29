@@ -14,6 +14,8 @@ export const ModalComponent = ({onCancel, title, children, onSubmit}) => {
     const eventHandler = (event) => {
         if (event.code === "Escape") {
             onCancel()
+        }else if(event.code === "Enter"){
+            onSubmit()
         }
     }
 
