@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { getAllWords } from 'middlewares/words';
 import { InputWord } from './components/InputWord';
+import { useDispatch, useSelector } from 'react-redux';
 import { Card } from './components/Card';
 import './style.scss';
-import { useDispatch, useSelector } from 'react-redux';
 import { Switcher } from './components/Switcher';
 import { getRandomInt } from 'utils/randomInt';
-import { Spinner } from '../UI/Spinner';
+// import { Spinner } from '../UI/Spinner';
 import { Notice } from '../UI/Notice';
 
 export const Practice = () => {
@@ -14,7 +14,7 @@ export const Practice = () => {
 
   const [wordIndex, setWordIndex] = useState(getRandomInt(cardWords.length));
   const [isMistake, setIsMistake] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [isEnglish, setIsEnglish] = useState(true);
   const dispatch = useDispatch();
 
@@ -44,7 +44,7 @@ export const Practice = () => {
       <div className="practice__switcher">
         <Switcher onChangeLang={onChangeLangHandler} />
       </div>
-      {/*<Spinner />*/}
+      { /*<Spinner />*/ }
       {cardWords.length === 0 && <Notice>Add words in your dictionary.</Notice>}
       {cardWords.length !== 0 && (
         <>

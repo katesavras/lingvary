@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { addWordAction, getWordsAction, removeWordAction } from '../actions/wordsActions';
+import { addWordAction, getWordsAction, removeWordAction } from 'store/actions/wordsActions';
 
 export const initialState = [];
 

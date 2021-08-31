@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { wordsReducer } from './reducers/wordsReducer';
+import { wordsReducer } from 'store/reducers/wordsReducer';
 
 const rootReducer = combineReducers({
   words: wordsReducer,

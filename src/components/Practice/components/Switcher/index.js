@@ -6,6 +6,7 @@ export const Switcher = ({ onChangeLang }) => {
   const switchEngHandler = () => {
     onChangeLang(true);
   };
+
   const switchRusHandler = () => {
     onChangeLang(false);
   };
@@ -40,6 +41,7 @@ export const Switcher = ({ onChangeLang }) => {
     </div>
   );
 };
+
 Switcher.propTypes = {
   onChangeLang: PropTypes.func.isRequired,
 };

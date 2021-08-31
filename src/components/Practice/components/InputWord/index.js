@@ -10,6 +10,7 @@ export const InputWord = ({ showNextWord, showHint, isMistake }) => {
 
   useEffect(() => {
     window.addEventListener('keydown', eventHandler);
+
     return () => {
       window.removeEventListener('keydown', eventHandler);
     };

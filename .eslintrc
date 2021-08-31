@@ -14,7 +14,7 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "jsx-a11y/control-has-associated-label": "off",
     "import/extensions": [
-      "error",
+      "off",
       "ignorePackages",
       {
         "js": "never",
@@ -24,13 +24,23 @@
       }
     ],
     "import/named": "error",
-    "import/no-unresolved": "error",
+    "import/no-unresolved": "off",
+    "import/order": "off",
+    "no-plusplus": "off",
     "import/no-cycle": "off",
+    "arrow-body-style": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "spaced-comment": "off",
+    "no-unused-expressions": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "import/prefer-default-export": "off",
     "no-restricted-globals": "off",
     "react/button-has-type": "off",
+    "react/require-default-props": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/no-did-update-set-state": "off",
@@ -62,7 +72,7 @@
       }
     ],
     "react/jsx-no-bind": [
-      "error",
+      "off",
       {
         "ignoreRefs": true,
         "allowArrowFunctions": false,
@@ -94,7 +104,7 @@
     "no-async-promise-executor": ["off"],
     "no-return-assign": ["error", "except-parens"],
     "no-use-before-define": [
-      "error",
+      "off",
       {
         "classes": false
       }
@@ -149,7 +159,7 @@
       }
     ],
     "no-underscore-dangle": [
-      "error",
+      "off",
       {
         "allowAfterThis": true
       }

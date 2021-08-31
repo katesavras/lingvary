@@ -5,7 +5,7 @@ import { Modal } from 'components/UI/Modal';
 import { removeWord } from 'middlewares/words';
 import { useDispatch } from 'react-redux';
 
-export const Word = ({ word: { eng, rus, id, key } }) => {
+export const Word = ({ word: { eng, rus, key } }) => {
   const [isModalShown, setModalShown] = useState(false);
   const dispatch = useDispatch();
 

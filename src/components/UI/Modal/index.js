@@ -8,12 +8,6 @@ export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
     ENTER: 'Enter',
     ESCAPE: 'Escape',
   };
-  useEffect(() => {
-    window.addEventListener('keydown', eventHandler);
-    return () => {
-      window.removeEventListener('keydown', eventHandler);
-    };
-  });
 
   const eventHandler = (event) => {
     if (event.code === KEY_CODES.ESCAPE) {
@@ -22,6 +16,16 @@ export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
       onSubmit();
     }
   };
+
+  useEffect(() => {
+    window.addEventListener('keydown', eventHandler);
+
+    return () => {
+      window.removeEventListener('keydown', eventHandler);
+    };
+  });
+
+
 
   return (
     <>

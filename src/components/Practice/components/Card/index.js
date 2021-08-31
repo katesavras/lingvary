@@ -9,6 +9,7 @@ export const Card = ({ cardWords, index, isEnglish }) => {
     </div>
   );
 };
+
 Card.propTypes = {
   index: PropTypes.number.isRequired,
   cardWords: PropTypes.array.isRequired,

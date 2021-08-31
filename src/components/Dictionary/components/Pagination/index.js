@@ -7,9 +7,11 @@ export const Pagination = ({ wordsPerPage, totalWords, paginate }) => {
 
   const pageNumbers = useMemo(() => {
     const memoPageNumbers = [];
+
     for (let i = 1; i <= Math.ceil(totalWords / wordsPerPage); i++) {
       memoPageNumbers.push(i);
     }
+
     return memoPageNumbers;
   }, [wordsPerPage, totalWords]);
 
@@ -17,6 +19,7 @@ export const Pagination = ({ wordsPerPage, totalWords, paginate }) => {
     setIsActivePage(page);
     paginate(page);
   };
+
   return (
     <>
       <div className="pages">
@@ -33,6 +36,7 @@ export const Pagination = ({ wordsPerPage, totalWords, paginate }) => {
     </>
   );
 };
+
 Pagination.propTypes = {
   wordsPerPage: PropTypes.number.isRequired,
   totalWords: PropTypes.number.isRequired,

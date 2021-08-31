@@ -9,6 +9,7 @@ export const NotificationComponent = ({ onClose, text }) => {
     const id = setTimeout(() => {
       onClose();
     }, 1500);
+
     return () => clearTimeout(id);
   }, [onClose]);
 
