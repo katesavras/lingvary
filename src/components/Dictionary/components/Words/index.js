@@ -6,7 +6,7 @@ import { Word } from "../Word";
 import PropTypes from "prop-types";
 import "./style.scss";
 
-export const Words = ({ words, onDelete }) => {
+export const Words = ({ words }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllWords());
@@ -15,13 +15,12 @@ export const Words = ({ words, onDelete }) => {
   return (
     <div className="words__wrapper">
       {words.map((word) => {
-        return <Word key={word.id} word={word} onDelete={onDelete} />;
+        return <Word key={word.id} word={word}/>;
       })}
     </div>
   );
 };
 
 Words.propTypes = {
-  onDelete: PropTypes.func.isRequired,
   words: PropTypes.array.isRequired,
 };

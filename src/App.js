@@ -8,30 +8,28 @@ import { PracticePage } from "./pages/PracticePage";
 import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
-  return (
-    <div className="app">
-      <Header />
-      <Switch>
-        <Route path="/" exact>
-          {" "}
-          <Redirect to="/home" />{" "}
-        </Route>
-        <Route path="/home">
-          <HomePage />
-        </Route>
-        <Route path="/dictionary">
-          <DictionaryPage />
-        </Route>
-        <Route path="/practice">
-          {" "}
-          <PracticePage />
-        </Route>
-        <Route path="*">
-          <PageNotFound />
-        </Route>
-      </Switch>
-    </div>
-  );
+    return (
+        <div className="app">
+            <Header/>
+            <Switch>
+                <Route path="/" exact>
+                    <Redirect to="/home"/>
+                </Route>
+                <Route path="/home">
+                    <HomePage/>
+                </Route>
+                <Route path="/dictionary">
+                    <DictionaryPage/>
+                </Route>
+                <Route path="/practice">
+                    <PracticePage/>
+                </Route>
+                <Route path="*">
+                    <PageNotFound/>
+                </Route>
+            </Switch>
+        </div>
+    );
 }
 
 export default App;

@@ -14,15 +14,12 @@ export const Practice = () => {
   const [isEnglish, setIsEnglish] = useState(true);
   const dispatch = useDispatch();
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
   useEffect(() => {
     dispatch(getAllWords());
   }, [dispatch]);
 
-  const onRightArrowHandler = (inputValue) => {
+  const showNextWordHandler = (inputValue) => {
     const isEngWordEqualInputValue =
       isEnglish && inputValue === cardWords[wordIndex].rus;
     const isRusWordEqualInputValue =
@@ -47,12 +44,13 @@ export const Practice = () => {
       <div className="practice__switcher">
         <Switcher onChangeLang={onChangeLangHandler} />
       </div>
+      {cardWords.length === 0 && "Add words in your dictionary!"}
       {cardWords.length !== 0 && (
         <>
           <Card cardWords={cardWords} index={wordIndex} isEnglish={isEnglish} />
           <InputWord
-            onRightArrow={onRightArrowHandler}
-            onLeftArrow={
+            showNextWord={showNextWordHandler}
+            showHint={
               isEnglish ? cardWords[wordIndex].rus : cardWords[wordIndex].eng
             }
             isMistake={isMistake}

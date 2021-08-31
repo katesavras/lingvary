@@ -1,5 +1,5 @@
-import { wordsReducer } from "../wordsReducer";
-import { initialState } from "../wordsReducer";
+import { wordsReducer, initialState } from "../wordsReducer";
+
 import {
   getWordsAction,
   removeWordAction,

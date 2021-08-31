@@ -5,7 +5,7 @@ import { createWords } from "middlewares/words";
 import "./style.scss";
 import PropTypes from "prop-types";
 
-export const NewWordForm = ({ onFormClose, onNotificationOpen }) => {
+export const NewWordForm = ({ onWordAdded, onNotificationOpen }) => {
   const [engWord, setEngWord] = useState("");
   const [rusWord, setRusWord] = useState("");
   const dispatch = useDispatch();
@@ -14,11 +14,8 @@ export const NewWordForm = ({ onFormClose, onNotificationOpen }) => {
   const rusWordInputHandler = (e) => setRusWord(e.target.value);
 
   const addNewWord = useCallback(() => {
-    if (!isNaN(engWord)) return null;
-    if (!isNaN(rusWord)) return null;
-
-    if (!engWord) return engWord;
-    if (!rusWord) return rusWord;
+    if (!isNaN(engWord) || !isNaN(rusWord)) return;
+    if (!engWord || !rusWord) return;
 
     dispatch(
       createWords(
@@ -34,7 +31,7 @@ export const NewWordForm = ({ onFormClose, onNotificationOpen }) => {
   }, [dispatch, engWord, rusWord, onNotificationOpen]);
 
   return (
-    <Modal title="Add new word" onCancel={onFormClose} onSubmit={addNewWord}>
+    <Modal title="Add new word" onCancel={onWordAdded} onSubmit={addNewWord}>
       <form className="word__form">
         <input
           type="text"
@@ -54,6 +51,6 @@ export const NewWordForm = ({ onFormClose, onNotificationOpen }) => {
 };
 
 NewWordForm.propTypes = {
-  onFormClose: PropTypes.func.isRequired,
+  onWordAdded: PropTypes.func.isRequired,
   onNotificationOpen: PropTypes.func.isRequired,
 };

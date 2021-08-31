@@ -3,21 +3,15 @@ import "./style.scss";
 import { NewWordForm } from "./components/NewWordForm";
 import { Words } from "./components/Words";
 import { Search } from "./components/Search";
-import { useDispatch, useSelector } from "react-redux";
-import { removeWord } from "middlewares/words";
+import { useSelector } from "react-redux";
 import { Notification } from "../UI/Notification";
-import { Modal } from "components/UI/Modal";
 import { Pagination } from "./components/Pagination";
 
 export const Dictionary = () => {
-  const dispatch = useDispatch();
   const words = useSelector((state) => state.words);
-  const [keyWord, setKeyWord] = useState("");
   const [searchedValue, setSearchedValue] = useState("");
   const [isFormOpened, setIsFormOpened] = useState(false);
   const [isNotification, setIsNotification] = useState(false);
-  const [isModalShown, setModalShown] = useState(false);
-  const [currentDeletedWord, setCurrentDeletedWord] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const wordsPerPage = 8;
 
@@ -46,21 +40,6 @@ export const Dictionary = () => {
     setIsFormOpened(false);
   };
 
-  const openModalHandler = (key, eng) => {
-    setKeyWord(key);
-    setCurrentDeletedWord(eng);
-    setModalShown(true);
-  };
-
-  const closeModalHandler = () => {
-    setModalShown(false);
-  };
-
-  const deleteWordHandler = () => {
-    dispatch(removeWord(keyWord));
-    setModalShown(false);
-  };
-
   const openNotificationHandler = () => {
     setIsNotification(true);
   };
@@ -80,10 +59,11 @@ export const Dictionary = () => {
       </div>
 
       <div className="dictionary__main">
-        <Words words={currentWords} onDelete={openModalHandler} />
+        <Words words={currentWords}/>
       </div>
 
-      <p className="noWords">{!filteredWords.length && "No such words..."} </p>
+      {(!words.length && <p className="noWords">Your dictionary is empty</p>)
+      ||  (!filteredWords.length && <p className="noWords">No such words...</p>)}
 
       <div className="dictionary__footer">
         {filteredWords.length ? (
@@ -97,23 +77,10 @@ export const Dictionary = () => {
 
       {isFormOpened && (
         <NewWordForm
-          onFormClose={closeFormHandler}
+          onWordAdded={closeFormHandler}
           onNotificationOpen={openNotificationHandler}
         />
       )}
-      {isModalShown ? (
-        <Modal
-          title=" "
-          onSubmit={deleteWordHandler}
-          onCancel={closeModalHandler}
-        >
-          <p className="dictionary__modal_p">
-            Are you sure you want
-            <br />
-            to delete <strong>{currentDeletedWord}</strong>?
-          </p>
-        </Modal>
-      ) : null}
 
       {isNotification ? (
         <Notification
@@ -123,4 +90,4 @@ export const Dictionary = () => {
       ) : null}
     </>
   );
-};
+}

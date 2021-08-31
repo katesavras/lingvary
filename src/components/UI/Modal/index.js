@@ -4,6 +4,10 @@ import { withPortal } from "hocs/withPortal";
 import PropTypes from "prop-types";
 
 export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
+  const KEY_CODES = {
+    ENTER: "Enter",
+    ESCAPE: "Escape"
+  }
   useEffect(() => {
     window.addEventListener("keydown", eventHandler);
     return () => {
@@ -12,9 +16,9 @@ export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
   });
 
   const eventHandler = (event) => {
-    if (event.code === "Escape") {
+    if (event.code === KEY_CODES.ESCAPE) {
       onCancel();
-    } else if (event.code === "Enter") {
+    } else if (event.code === KEY_CODES.ENTER) {
       onSubmit();
     }
   };

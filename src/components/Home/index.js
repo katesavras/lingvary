@@ -1,5 +1,5 @@
 import React from "react";
-import picture from "./img/dictionary.jpg";
+import picture from "./img/vocabulary.jpg";
 import "./style.scss";
 import { NavLink } from "react-router-dom";
 
@@ -18,7 +18,11 @@ export const Home = () => {
           Lingvary
         </h1>
         <p>
-          This app helps you quickly and easily <br /> remember new words.
+          Lingvary will help you quickly
+          <br/>
+          and easily expand
+          <br/>
+          your vocabulary.
         </p>
         <NavLink to="/dictionary">
           <button>

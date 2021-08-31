@@ -5,16 +5,14 @@ import PropTypes from "prop-types";
 export const Pagination = ({ wordsPerPage, totalWords, paginate }) => {
   const [activePage, setIsActivePage] = useState(1);
 
-  const calculatePageNumbers = () => {
-    const memoPageNumbers = [];
-    for (let i = 1; i <= Math.ceil(totalWords / wordsPerPage); i++) {
-      memoPageNumbers.push(i);
-    }
-    return memoPageNumbers;
-  };
-
   const pageNumbers = useMemo(
-    () => calculatePageNumbers(),
+    () => {
+      const memoPageNumbers = [];
+      for (let i = 1; i <= Math.ceil(totalWords / wordsPerPage); i++) {
+        memoPageNumbers.push(i);
+      }
+      return memoPageNumbers;
+    },
     [wordsPerPage, totalWords]
   );
 

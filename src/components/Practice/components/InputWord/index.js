@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import PropTypes from "prop-types";
 
-export const InputWord = ({ onRightArrow, onLeftArrow, isMistake }) => {
+export const InputWord = ({ showNextWord, showHint, isMistake }) => {
   const [inputValue, setInputValue] = useState(" ");
+  const KEY_CODES = {
+    ENTER: "Enter"
+  }
 
   useEffect(() => {
     window.addEventListener("keydown", eventHandler);
@@ -13,7 +16,7 @@ export const InputWord = ({ onRightArrow, onLeftArrow, isMistake }) => {
   });
 
   const eventHandler = (event) => {
-    if (event.code === "Enter") {
+    if (event.code === KEY_CODES.ENTER) {
       rightArrowClickHandler();
     }
   };
@@ -23,17 +26,17 @@ export const InputWord = ({ onRightArrow, onLeftArrow, isMistake }) => {
   };
 
   const rightArrowClickHandler = () => {
-    onRightArrow(inputValue.trim());
+    showNextWord(inputValue.trim());
     setInputValue("");
   };
 
-  const leftArrowClickHandler = () => {
-    setInputValue(onLeftArrow);
+  const questionClickHandler = () => {
+    setInputValue(showHint);
   };
 
   return (
     <div className="input__wrapper">
-      <span className="arrow" onClick={leftArrowClickHandler}>
+      <span className="input__control" onClick={questionClickHandler}>
         &#63;
       </span>
       <input
@@ -43,7 +46,7 @@ export const InputWord = ({ onRightArrow, onLeftArrow, isMistake }) => {
         onChange={inputHandler}
         value={inputValue}
       />
-      <span className="arrow" onClick={rightArrowClickHandler}>
+      <span className="input__control" onClick={rightArrowClickHandler}>
         &#9002;
       </span>
     </div>
@@ -51,7 +54,7 @@ export const InputWord = ({ onRightArrow, onLeftArrow, isMistake }) => {
 };
 
 InputWord.propTypes = {
-  onRightArrow: PropTypes.func.isRequired,
-  onLeftArrow: PropTypes.string.isRequired,
+  showNextWord: PropTypes.func.isRequired,
+  showHint: PropTypes.string.isRequired,
   isMistake: PropTypes.bool.isRequired,
 };
