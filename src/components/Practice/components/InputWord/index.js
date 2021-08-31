@@ -30,13 +30,14 @@ export const InputWord = ({ showNextWord, showHint, isMistake }) => {
     setInputValue("");
   };
 
-  const questionClickHandler = () => {
+  const hintClickHandler = () => {
     setInputValue(showHint);
+
   };
 
   return (
     <div className="input__wrapper">
-      <span className="input__control" onClick={questionClickHandler}>
+      <span className="btn__control" onClick={hintClickHandler}>
         &#63;
       </span>
       <input
@@ -46,7 +47,7 @@ export const InputWord = ({ showNextWord, showHint, isMistake }) => {
         onChange={inputHandler}
         value={inputValue}
       />
-      <span className="input__control" onClick={rightArrowClickHandler}>
+      <span className="btn__control" onClick={rightArrowClickHandler}>
         &#9002;
       </span>
     </div>

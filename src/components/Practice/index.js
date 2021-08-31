@@ -6,11 +6,15 @@ import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Switcher } from "./components/Switcher";
 import { getRandomInt } from "utils/randomInt";
+import {Spinner} from "../UI/Spinner";
+import {Notice} from "../UI/Notice";
 
 export const Practice = () => {
   const cardWords = useSelector((state) => state.words);
+
   const [wordIndex, setWordIndex] = useState(getRandomInt(cardWords.length));
   const [isMistake, setIsMistake] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isEnglish, setIsEnglish] = useState(true);
   const dispatch = useDispatch();
 
@@ -44,7 +48,8 @@ export const Practice = () => {
       <div className="practice__switcher">
         <Switcher onChangeLang={onChangeLangHandler} />
       </div>
-      {cardWords.length === 0 && "Add words in your dictionary!"}
+      <Spinner/>
+      {cardWords.length === 0 && <Notice>Add words in your dictionary.</Notice>}
       {cardWords.length !== 0 && (
         <>
           <Card cardWords={cardWords} index={wordIndex} isEnglish={isEnglish} />
@@ -59,4 +64,4 @@ export const Practice = () => {
       )}
     </div>
   );
-};
+}

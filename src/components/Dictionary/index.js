@@ -6,6 +6,7 @@ import { Search } from "./components/Search";
 import { useSelector } from "react-redux";
 import { Notification } from "../UI/Notification";
 import { Pagination } from "./components/Pagination";
+import {Notice} from "../UI/Notice";
 
 export const Dictionary = () => {
   const words = useSelector((state) => state.words);
@@ -62,8 +63,8 @@ export const Dictionary = () => {
         <Words words={currentWords}/>
       </div>
 
-      {(!words.length && <p className="noWords">Your dictionary is empty</p>)
-      ||  (!filteredWords.length && <p className="noWords">No such words...</p>)}
+      {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>)
+      ||  (!filteredWords.length && <Notice>No such words...</Notice>)}
 
       <div className="dictionary__footer">
         {filteredWords.length ? (
