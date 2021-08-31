@@ -6,10 +6,10 @@ import {
   removeWordAction,
 } from '../store/actions/wordsActions';
 
-const wordsUrl = `https://lingvary-6f32e-default-rtdb.firebaseio.com/words.json`;
+const { REACT_APP_WORDS_URL } = process.env;
 
 export const getAllWords = () => async (dispatch) => {
-  const response = await fetch(wordsUrl);
+  const response = await fetch(REACT_APP_WORDS_URL);
   const body = await response.json();
 
   return dispatch(getWordsAction(normalizeWords(body)));
@@ -22,7 +22,7 @@ export const createWords = (engWord, rusWord) => async (dispatch) => {
     rus: rusWord,
   };
 
-  const response = await fetch(wordsUrl, {
+  const response = await fetch(REACT_APP_WORDS_URL, {
     method: 'POST',
     body: JSON.stringify(newPairWords),
   });
