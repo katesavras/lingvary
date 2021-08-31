@@ -1,6 +1,6 @@
-import "./style.scss";
-import React from "react";
-import PropTypes from "prop-types";
+import './style.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Search = ({ onSearch }) => {
   const handleSearch = (e) => {

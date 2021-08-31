@@ -1,11 +1,8 @@
-import { handleActions } from "redux-actions";
-import {
-  addWordAction,
-  getWordsAction,
-  removeWordAction,
-} from "../actions/wordsActions";
+import { handleActions } from 'redux-actions';
+import { addWordAction, getWordsAction, removeWordAction } from '../actions/wordsActions';
 
 export const initialState = [];
+
 export const wordsReducer = handleActions(
   {
     [getWordsAction]: (state, action) => [...action.payload],
@@ -13,5 +10,5 @@ export const wordsReducer = handleActions(
     [removeWordAction]: (state, action) =>
       state.filter(({ key }) => key !== action.payload),
   },
-  initialState
+  initialState,
 );

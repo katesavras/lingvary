@@ -1,6 +1,6 @@
-import React from "react";
-import "./style.scss";
-import PropTypes from "prop-types";
+import React from 'react';
+import './style.scss';
+import PropTypes from 'prop-types';
 
 export const Switcher = ({ onChangeLang }) => {
   const switchEngHandler = () => {

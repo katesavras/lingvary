@@ -1,6 +1,6 @@
-import React from "react";
-import logo from "./img/logo.png";
-import "./style.scss";
+import React from 'react';
+import logo from './img/logo.png';
+import './style.scss';
 
 export const Logo = () => {
   return (

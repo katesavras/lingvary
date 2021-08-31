@@ -1,14 +1,11 @@
-import React from "react";
-import picture from "./img/vocabulary.jpg";
-import "./style.scss";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import picture from './img/vocabulary.jpg';
+import './style.scss';
+import { NavLink } from 'react-router-dom';
 
 export const Home = () => {
   return (
-    <div
-      className="home__wrapper"
-      style={{ backgroundImage: `url(${picture})` }}
-    >
+    <div className="home__wrapper" style={{ backgroundImage: `url(${picture})` }}>
       <div className="home__content">
         <h1>
           Learn Words
@@ -19,14 +16,14 @@ export const Home = () => {
         </h1>
         <p>
           Lingvary will help you quickly
-          <br/>
+          <br />
           and easily expand
-          <br/>
+          <br />
           your vocabulary.
         </p>
         <NavLink to="/dictionary">
           <button>
-            Let`s start <span>&rarr;</span>{" "}
+            Let`s start <span>&rarr;</span>{' '}
           </button>
         </NavLink>
       </div>

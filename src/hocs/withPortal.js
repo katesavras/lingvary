@@ -1,6 +1,5 @@
-import ReactDom from "react-dom";
-import React from "react";
+import ReactDom from 'react-dom';
+import React from 'react';
 
-export const withPortal = (Component) => (props) => {
-  return ReactDom.createPortal(<Component {...props} />, document.body);
-};
+export const withPortal = (Component) => (props) =>
+  ReactDom.createPortal(<Component {...props} />, document.body);

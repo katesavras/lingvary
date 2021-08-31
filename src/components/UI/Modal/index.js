@@ -1,17 +1,17 @@
-import "./index.scss";
-import React, { useEffect } from "react";
-import { withPortal } from "hocs/withPortal";
-import PropTypes from "prop-types";
+import './index.scss';
+import React, { useEffect } from 'react';
+import { withPortal } from 'hocs/withPortal';
+import PropTypes from 'prop-types';
 
 export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
   const KEY_CODES = {
-    ENTER: "Enter",
-    ESCAPE: "Escape"
-  }
+    ENTER: 'Enter',
+    ESCAPE: 'Escape',
+  };
   useEffect(() => {
-    window.addEventListener("keydown", eventHandler);
+    window.addEventListener('keydown', eventHandler);
     return () => {
-      window.removeEventListener("keydown", eventHandler);
+      window.removeEventListener('keydown', eventHandler);
     };
   });
 
@@ -26,7 +26,7 @@ export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
   return (
     <>
       <div className="modal" onClick={onCancel}>
-        {" "}
+        {' '}
       </div>
       <div className="modal__content">
         <span onClick={onCancel}>&times;</span>

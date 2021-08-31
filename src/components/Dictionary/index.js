@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import "./style.scss";
-import { NewWordForm } from "./components/NewWordForm";
-import { Words } from "./components/Words";
-import { Search } from "./components/Search";
-import { useSelector } from "react-redux";
-import { Notification } from "../UI/Notification";
-import { Pagination } from "./components/Pagination";
-import {Notice} from "../UI/Notice";
+import React, { useState } from 'react';
+import './style.scss';
+import { NewWordForm } from './components/NewWordForm';
+import { Words } from './components/Words';
+import { Search } from './components/Search';
+import { useSelector } from 'react-redux';
+import { Notification } from '../UI/Notification';
+import { Pagination } from './components/Pagination';
+import { Notice } from '../UI/Notice';
 
 export const Dictionary = () => {
   const words = useSelector((state) => state.words);
-  const [searchedValue, setSearchedValue] = useState("");
+  const [searchedValue, setSearchedValue] = useState('');
   const [isFormOpened, setIsFormOpened] = useState(false);
   const [isNotification, setIsNotification] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,11 +60,11 @@ export const Dictionary = () => {
       </div>
 
       <div className="dictionary__main">
-        <Words words={currentWords}/>
+        <Words words={currentWords} />
       </div>
 
-      {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>)
-      ||  (!filteredWords.length && <Notice>No such words...</Notice>)}
+      {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>) ||
+        (!filteredWords.length && <Notice>No such words...</Notice>)}
 
       <div className="dictionary__footer">
         {filteredWords.length ? (
@@ -91,4 +91,4 @@ export const Dictionary = () => {
       ) : null}
     </>
   );
-}
+};

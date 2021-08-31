@@ -1,6 +1,4 @@
-import React from "react";
-import { Dictionary } from "../../components/Dictionary";
+import React from 'react';
+import { Dictionary } from '../../components/Dictionary';
 
-export const DictionaryPage = () => {
-  return <Dictionary />;
-};
+export const DictionaryPage = () => <Dictionary />;

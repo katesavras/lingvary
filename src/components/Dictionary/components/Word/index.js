@@ -1,11 +1,11 @@
-import React, {useState} from "react";
-import "./style.scss";
-import PropTypes from "prop-types";
-import {Modal} from "components/UI/Modal";
-import {removeWord} from "middlewares/words";
-import {useDispatch} from "react-redux";
+import React, { useState } from 'react';
+import './style.scss';
+import PropTypes from 'prop-types';
+import { Modal } from 'components/UI/Modal';
+import { removeWord } from 'middlewares/words';
+import { useDispatch } from 'react-redux';
 
-export const Word = ({ word: { eng, rus, id, key }}) => {
+export const Word = ({ word: { eng, rus, id, key } }) => {
   const [isModalShown, setModalShown] = useState(false);
   const dispatch = useDispatch();
 
@@ -25,17 +25,13 @@ export const Word = ({ word: { eng, rus, id, key }}) => {
   return (
     <>
       {isModalShown ? (
-          <Modal
-              title=" "
-              onSubmit={deleteWordHandler}
-              onCancel={closeModalHandler}
-          >
-            <p className="dictionary__modal_p">
-              Are you sure you want
-              <br />
-              to delete <strong>{eng}</strong>?
-            </p>
-          </Modal>
+        <Modal title=" " onSubmit={deleteWordHandler} onCancel={closeModalHandler}>
+          <p className="dictionary__modal_p">
+            Are you sure you want
+            <br />
+            to delete <strong>{eng}</strong>?
+          </p>
+        </Modal>
       ) : null}
       <div className="word">
         <p className="word__eng">{eng}</p>

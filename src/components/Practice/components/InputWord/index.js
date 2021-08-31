@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import "./style.scss";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from 'react';
+import './style.scss';
+import PropTypes from 'prop-types';
 
 export const InputWord = ({ showNextWord, showHint, isMistake }) => {
-  const [inputValue, setInputValue] = useState(" ");
+  const [inputValue, setInputValue] = useState(' ');
   const KEY_CODES = {
-    ENTER: "Enter"
-  }
+    ENTER: 'Enter',
+  };
 
   useEffect(() => {
-    window.addEventListener("keydown", eventHandler);
+    window.addEventListener('keydown', eventHandler);
     return () => {
-      window.removeEventListener("keydown", eventHandler);
+      window.removeEventListener('keydown', eventHandler);
     };
   });
 
@@ -27,12 +27,11 @@ export const InputWord = ({ showNextWord, showHint, isMistake }) => {
 
   const rightArrowClickHandler = () => {
     showNextWord(inputValue.trim());
-    setInputValue("");
+    setInputValue('');
   };
 
   const hintClickHandler = () => {
     setInputValue(showHint);
-
   };
 
   return (
@@ -41,7 +40,7 @@ export const InputWord = ({ showNextWord, showHint, isMistake }) => {
         &#63;
       </span>
       <input
-        className={isMistake ? " mistake" : null}
+        className={isMistake ? ' mistake' : null}
         autoFocus
         type="text"
         onChange={inputHandler}

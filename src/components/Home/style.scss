@@ -1,6 +1,6 @@
 $base-color: #022a71;
 $blue-color: #a3c0f5;
-@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
 .home__wrapper {
   display: flex;
@@ -19,7 +19,7 @@ $blue-color: #a3c0f5;
   }
   p {
     font-size: 24px;
-    font-family: "Poor Story", Arial, sans-serif;
+    font-family: 'Poor Story', Arial, sans-serif;
   }
   button {
     margin-top: 40px;

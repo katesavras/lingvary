@@ -1,11 +1,19 @@
-import React from "react";
-import "./style.scss";
+import React from 'react';
+import './style.scss';
 
-export const Spinner = () => {
-    return (
-        <div className="lds-spinner">
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-        </div>
-    )
-};
-
+export const Spinner = () => (
+  <div className="lds-spinner">
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+  </div>
+);

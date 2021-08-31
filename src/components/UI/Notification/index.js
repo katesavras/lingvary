@@ -1,8 +1,8 @@
-import "./index.scss";
-import PropTypes from "prop-types";
-import ReactDom from "react-dom";
-import { withPortal } from "hocs/withPortal";
-import React, { useEffect } from "react";
+import './index.scss';
+import PropTypes from 'prop-types';
+import ReactDom from 'react-dom';
+import { withPortal } from 'hocs/withPortal';
+import React, { useEffect } from 'react';
 
 export const NotificationComponent = ({ onClose, text }) => {
   useEffect(() => {
@@ -16,7 +16,7 @@ export const NotificationComponent = ({ onClose, text }) => {
     <div className="notification_wrapper">
       <div>{text}</div>
     </div>,
-    document.getElementById("root")
+    document.getElementById('root'),
   );
 };
 
