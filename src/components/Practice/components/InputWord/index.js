@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 import PropTypes from 'prop-types';
+import { KEY_CODES } from 'constants/index';
 
 export const InputWord = ({ showNextWord, showHint, isMistake }) => {
   const [inputValue, setInputValue] = useState(' ');
-  const KEY_CODES = {
-    ENTER: 'Enter',
-  };
 
   useEffect(() => {
     window.addEventListener('keydown', eventHandler);

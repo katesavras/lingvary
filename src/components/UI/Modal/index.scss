@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
 .modal {
   display: block;
   position: fixed;
@@ -38,12 +40,14 @@
     }
   }
 
-  h2 {
+  .modal__content_title {
     color: #032c76;
-    margin-top: 35px;
+    font-size: 30px;
+    font-weight: 300;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Poor Story', Arial, sans-serif;
   }
 }
 
@@ -56,7 +60,7 @@
 
 .modal__control_btn {
   margin-bottom: 20px;
-  width: 35%;
+  width: 25%;
   outline: none;
   border: 1px solid orange;
   color: white;
@@ -65,6 +69,9 @@
   cursor: pointer;
   height: 30px;
   transition: 30ms;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Poor Story', Arial, sans-serif;
 
   &:hover {
     transform: scale(1.1);

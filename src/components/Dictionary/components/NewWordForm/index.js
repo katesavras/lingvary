@@ -5,7 +5,7 @@ import { createWords } from 'middlewares/words';
 import './style.scss';
 import PropTypes from 'prop-types';
 
-export const NewWordForm = ({ onWordAdded, onNotificationOpen }) => {
+export const NewWordForm = ({ onFormClose, onWordAdded }) => {
   const [engWord, setEngWord] = useState('');
   const [rusWord, setRusWord] = useState('');
   const dispatch = useDispatch();
@@ -29,11 +29,11 @@ export const NewWordForm = ({ onWordAdded, onNotificationOpen }) => {
     setEngWord('');
     setRusWord('');
 
-    onNotificationOpen();
-  }, [dispatch, engWord, rusWord, onNotificationOpen]);
+    onWordAdded();
+  }, [dispatch, engWord, rusWord, onWordAdded]);
 
   return (
-    <Modal title="Add new word" onCancel={onWordAdded} onSubmit={addNewWord}>
+    <Modal title="Add new word" onCancel={onFormClose} onSubmit={addNewWord}>
       <form className="word__form">
         <input
           type="text"
@@ -53,6 +53,6 @@ export const NewWordForm = ({ onWordAdded, onNotificationOpen }) => {
 };
 
 NewWordForm.propTypes = {
+  onFormClose: PropTypes.func.isRequired,
   onWordAdded: PropTypes.func.isRequired,
-  onNotificationOpen: PropTypes.func.isRequired,
 };

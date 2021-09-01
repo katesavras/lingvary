@@ -4,9 +4,9 @@ import { NewWordForm } from './components/NewWordForm';
 import { Words } from './components/Words';
 import { Search } from './components/Search';
 import { useSelector } from 'react-redux';
-import { Notification } from '../UI/Notification';
+import { Notification } from 'components/UI/Notification';
 import { Pagination } from './components/Pagination';
-import { Notice } from '../UI/Notice';
+import { Notice } from 'components/UI/Notice';
 
 export const Dictionary = () => {
   const words = useSelector((state) => state.words);
@@ -14,7 +14,7 @@ export const Dictionary = () => {
   const [isFormOpened, setIsFormOpened] = useState(false);
   const [isNotification, setIsNotification] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const wordsPerPage = 8;
+  const wordsPerPage = 7;
 
   const filteredWords = words.filter(({ eng, rus }) => {
     return (
@@ -78,8 +78,8 @@ export const Dictionary = () => {
 
       {isFormOpened && (
         <NewWordForm
-          onWordAdded={closeFormHandler}
-          onNotificationOpen={openNotificationHandler}
+          onFormClose={closeFormHandler}
+          onWordAdded={openNotificationHandler}
         />
       )}
 

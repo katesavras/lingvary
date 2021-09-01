@@ -1,6 +1,5 @@
 import './index.scss';
 import PropTypes from 'prop-types';
-import ReactDom from 'react-dom';
 import { withPortal } from 'hocs/withPortal';
 import React, { useEffect } from 'react';
 
@@ -13,11 +12,10 @@ export const NotificationComponent = ({ onClose, text }) => {
     return () => clearTimeout(id);
   }, [onClose]);
 
-  return ReactDom.createPortal(
+  return (
     <div className="notification_wrapper">
       <div>{text}</div>
-    </div>,
-    document.getElementById('root'),
+    </div>
   );
 };
 

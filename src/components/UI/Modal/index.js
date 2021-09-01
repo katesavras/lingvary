@@ -2,13 +2,9 @@ import './index.scss';
 import React, { useEffect } from 'react';
 import { withPortal } from 'hocs/withPortal';
 import PropTypes from 'prop-types';
+import { KEY_CODES } from 'constants/index';
 
 export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
-  const KEY_CODES = {
-    ENTER: 'Enter',
-    ESCAPE: 'Escape',
-  };
-
   const eventHandler = (event) => {
     if (event.code === KEY_CODES.ESCAPE) {
       onCancel();
@@ -25,8 +21,6 @@ export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
     };
   });
 
-
-
   return (
     <>
       <div className="modal" onClick={onCancel}>
@@ -34,7 +28,7 @@ export const ModalComponent = ({ onCancel, title, children, onSubmit }) => {
       </div>
       <div className="modal__content">
         <span onClick={onCancel}>&times;</span>
-        <h2>{title}</h2>
+        <p className="modal__content_title">{title}</p>
         {children}
         <div className="modal__control">
           <button className="modal__control_btn" onClick={onSubmit}>
