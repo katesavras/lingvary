@@ -6,7 +6,6 @@ import { Card } from './components/Card';
 import './style.scss';
 import { Switcher } from './components/Switcher';
 import { getRandomInt } from 'utils/randomInt';
-// import { Spinner } from '../UI/Spinner';
 import { Notice } from '../UI/Notice';
 
 export const Practice = () => {
@@ -14,7 +13,6 @@ export const Practice = () => {
 
   const [wordIndex, setWordIndex] = useState(getRandomInt(cardWords.length));
   const [isMistake, setIsMistake] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
   const [isEnglish, setIsEnglish] = useState(true);
   const dispatch = useDispatch();
 
@@ -44,7 +42,6 @@ export const Practice = () => {
       <div className="practice__switcher">
         <Switcher onChangeLang={onChangeLangHandler} />
       </div>
-      { /*<Spinner />*/ }
       {cardWords.length === 0 && <Notice>Add words in your dictionary.</Notice>}
       {cardWords.length !== 0 && (
         <>
@@ -58,4 +55,4 @@ export const Practice = () => {
       )}
     </div>
   );
-};
+}
