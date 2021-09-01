@@ -5,8 +5,8 @@ $blue-color: #a3c0f5;
 .home__wrapper {
   display: flex;
   height: 100vh;
-  background-position: right 0% top ;
-  background-size: 80% auto;
+  background-position: right 0 top;
+  background-size: 81% 90vh;
   background-repeat: no-repeat;
 }
 
@@ -14,14 +14,14 @@ $blue-color: #a3c0f5;
   width: 35%;
   color: $base-color;
   padding-left: 20px;
-  h1{
+  h1 {
     font-size: 48px;
   }
-  p{
+  p {
     font-size: 24px;
-    font-family: 'Poor Story', cursive;
+    font-family: 'Poor Story', Arial, sans-serif;
   }
-  button{
+  button {
     margin-top: 40px;
     border-radius: 30px;
     border: $blue-color;
@@ -33,6 +33,3 @@ $blue-color: #a3c0f5;
     font-size: 24px;
   }
 }
-
-
-

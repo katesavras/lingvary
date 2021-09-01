@@ -4,23 +4,35 @@
   align-items: center;
   width: 35%;
   height: 100px;
+  color: #032c76;
 
   input {
     width: 250px;
     height: 50px;
-    border: 1px solid grey;
+    border: 1px solid #dce5f6;
     border-radius: 10px;
+    background-color: #ebf0fa;
+    color: #022a71;
     padding-left: 15px;
     outline: none;
     font-size: 30px;
 
     &.mistake {
-      border: 2px solid #f30808;
+      border: 1px solid #f11a1a;
+      background-color: #f8eded;
     }
   }
 }
 
-.arrow {
+.btn__control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
   font-size: 30px;
+  font-weight: 700;
+  color: #6472a5;
   cursor: pointer;
 }

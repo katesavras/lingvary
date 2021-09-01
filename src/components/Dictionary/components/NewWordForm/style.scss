@@ -1,22 +1,21 @@
-.word__form{
+.word__form {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 
-
-  input{
+  input {
     border-radius: 5px;
-    border: 1px solid #b1b2b3;
+    border: 1px solid #d9dadb;
     outline: none;
     background-color: white;
     width: 200px;
     height: 40px;
     font-size: 18px;
     padding-left: 15px;
-    box-shadow: 0 0 5px  #b1b2b3;
+    box-shadow: 0 0 5px #b1b2b3;
 
-    &:last-child{
+    &:last-child {
       margin-top: 20px;
     }
   }
