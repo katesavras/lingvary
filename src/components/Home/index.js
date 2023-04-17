@@ -8,18 +8,10 @@ export const Home = () => {
     <div className="home__wrapper" style={{ backgroundImage: `url(${picture})` }}>
       <div className="home__content">
         <h1>
-          Learn Words
-          <br />
-          With
-          <br />
-          Lingvary
+          Learn Words With Lingvary
         </h1>
         <p>
-          Lingvary will help you quickly
-          <br />
-          and easily expand
-          <br />
-          your vocabulary.
+          Lingvary will help you quickly and easily expand your vocabulary.
         </p>
         <NavLink to="/dictionary">
           <button>

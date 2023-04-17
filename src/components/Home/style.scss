@@ -1,12 +1,13 @@
 $base-color: #022a71;
 $blue-color: #a3c0f5;
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+$font: 'Poor Story', Arial, sans-serif;
 
 .home__wrapper {
   display: flex;
   height: 100vh;
   background-position: right 0 top;
-  background-size: 81% 90vh;
+  background-size: 80% auto;
   background-repeat: no-repeat;
 }
 
@@ -14,22 +15,98 @@ $blue-color: #a3c0f5;
   width: 35%;
   color: $base-color;
   padding-left: 20px;
+
   h1 {
     font-size: 48px;
   }
+
   p {
     font-size: 24px;
-    font-family: 'Poor Story', Arial, sans-serif;
+    font-family: $font;
   }
+
   button {
     margin-top: 40px;
     border-radius: 30px;
-    border: $blue-color;
-    background-color: $blue-color;
     width: 200px;
     height: 50px;
-    outline: none;
-    color: $base-color;
     font-size: 24px;
+    outline: none;
+    border: $blue-color;
+    background-color: $blue-color;
+    color: $base-color;
   }
 }
+
+//// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .home__wrapper {
+    display: flex;
+    height: 100vh;
+    background-position: center bottom 45%;
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+  }
+  .home__content{
+    width: 100%;
+    padding-left: 0;
+
+    h1 {
+      margin: 2rem auto;
+      font-size: 24px;
+      width: 80%;
+      text-align: center;
+    }
+
+    p {
+      margin: 1rem auto;
+      width: 60%;
+      text-align: center;
+    }
+
+    button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }
+}
+
+//// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .home__wrapper {
+    background-size: 80% auto;
+  }
+  .home__content{
+    h1 {
+      margin: 2rem auto;
+      font-size: 32px;
+    }
+
+    button {
+      width: 150px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }
+}
+
+//
+////// Large devices (desktops, less than 1200px)
+//@media (max-width: 1199.98px) {
+//
+//}
+//
+//
+//// X-Large devices (large desktops, less than 1400px)
+//@media (max-width: 1399.98px) { ... }

@@ -14,7 +14,7 @@ export const Dictionary = () => {
   const [isFormOpened, setIsFormOpened] = useState(false);
   const [isNotification, setIsNotification] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const wordsPerPage = 7;
+  const wordsPerPage = 8;
 
   const filteredWords = words.filter(({ eng, rus }) => {
     return (

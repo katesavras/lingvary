@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       <Header />
       <Switch>
-        <Route path="/" exact>
+        <Route path="/lingvary/" exact>
           <Redirect to="/home" />
         </Route>
         <Route path="/home">
