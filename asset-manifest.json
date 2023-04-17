@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/lingvary/static/css/main.0876d6ce.chunk.css",
+    "main.js": "/lingvary/static/js/main.516b5a5b.chunk.js",
+    "main.js.map": "/lingvary/static/js/main.516b5a5b.chunk.js.map",
+    "runtime-main.js": "/lingvary/static/js/runtime-main.af7e9db7.js",
+    "runtime-main.js.map": "/lingvary/static/js/runtime-main.af7e9db7.js.map",
+    "static/js/2.a3ae9202.chunk.js": "/lingvary/static/js/2.a3ae9202.chunk.js",
+    "static/js/2.a3ae9202.chunk.js.map": "/lingvary/static/js/2.a3ae9202.chunk.js.map",
+    "static/js/3.ca4643e5.chunk.js": "/lingvary/static/js/3.ca4643e5.chunk.js",
+    "static/js/3.ca4643e5.chunk.js.map": "/lingvary/static/js/3.ca4643e5.chunk.js.map",
+    "index.html": "/lingvary/index.html",
+    "static/css/main.0876d6ce.chunk.css.map": "/lingvary/static/css/main.0876d6ce.chunk.css.map",
+    "static/js/2.a3ae9202.chunk.js.LICENSE.txt": "/lingvary/static/js/2.a3ae9202.chunk.js.LICENSE.txt",
+    "static/media/pageNotFound.e34d44fc.jpg": "/lingvary/static/media/pageNotFound.e34d44fc.jpg",
+    "static/media/vocabulary.20329299.jpg": "/lingvary/static/media/vocabulary.20329299.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af7e9db7.js",
+    "static/js/2.a3ae9202.chunk.js",
+    "static/css/main.0876d6ce.chunk.css",
+    "static/js/main.516b5a5b.chunk.js"
+  ]
+}
