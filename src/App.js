@@ -1,5 +1,6 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect,  HashRouter as  Route, Switch } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import './App.scss';
 import { HomePage } from './pages/HomePage';
 import { Header } from './components/Header';
@@ -12,7 +13,7 @@ function App() {
     <div className="app">
       <Header />
       <Switch>
-        <Route path="/lingvary/" exact>
+        <Route path="/" exact>
           <Redirect to="/home" />
         </Route>
         <Route path="/home">
