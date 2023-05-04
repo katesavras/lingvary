@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/lingvary/static/css/main.24946ad3.chunk.css",
-    "main.js": "/lingvary/static/js/main.a92519f5.chunk.js",
-    "main.js.map": "/lingvary/static/js/main.a92519f5.chunk.js.map",
-    "runtime-main.js": "/lingvary/static/js/runtime-main.af7e9db7.js",
-    "runtime-main.js.map": "/lingvary/static/js/runtime-main.af7e9db7.js.map",
-    "static/js/2.d4d9b518.chunk.js": "/lingvary/static/js/2.d4d9b518.chunk.js",
-    "static/js/2.d4d9b518.chunk.js.map": "/lingvary/static/js/2.d4d9b518.chunk.js.map",
-    "static/js/3.ca4643e5.chunk.js": "/lingvary/static/js/3.ca4643e5.chunk.js",
-    "static/js/3.ca4643e5.chunk.js.map": "/lingvary/static/js/3.ca4643e5.chunk.js.map",
+    "main.css": "/lingvary/static/css/main.657b2e7d.chunk.css",
+    "main.js": "/lingvary/static/js/main.a1ac2970.chunk.js",
+    "main.js.map": "/lingvary/static/js/main.a1ac2970.chunk.js.map",
+    "runtime-main.js": "/lingvary/static/js/runtime-main.681bacbb.js",
+    "runtime-main.js.map": "/lingvary/static/js/runtime-main.681bacbb.js.map",
+    "static/js/2.83dd1580.chunk.js": "/lingvary/static/js/2.83dd1580.chunk.js",
+    "static/js/2.83dd1580.chunk.js.map": "/lingvary/static/js/2.83dd1580.chunk.js.map",
+    "static/js/3.4f49883a.chunk.js": "/lingvary/static/js/3.4f49883a.chunk.js",
+    "static/js/3.4f49883a.chunk.js.map": "/lingvary/static/js/3.4f49883a.chunk.js.map",
     "index.html": "/lingvary/index.html",
-    "static/css/main.24946ad3.chunk.css.map": "/lingvary/static/css/main.24946ad3.chunk.css.map",
-    "static/js/2.d4d9b518.chunk.js.LICENSE.txt": "/lingvary/static/js/2.d4d9b518.chunk.js.LICENSE.txt",
-    "static/media/pageNotFound.e34d44fc.jpg": "/lingvary/static/media/pageNotFound.e34d44fc.jpg",
-    "static/media/vocabulary.20329299.jpg": "/lingvary/static/media/vocabulary.20329299.jpg"
+    "static/css/main.657b2e7d.chunk.css.map": "/lingvary/static/css/main.657b2e7d.chunk.css.map",
+    "static/js/2.83dd1580.chunk.js.LICENSE.txt": "/lingvary/static/js/2.83dd1580.chunk.js.LICENSE.txt",
+    "static/media/dictionary.d1a3c4cd.png": "/lingvary/static/media/dictionary.d1a3c4cd.png",
+    "static/media/pageNotFound.e34d44fc.jpg": "/lingvary/static/media/pageNotFound.e34d44fc.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.af7e9db7.js",
-    "static/js/2.d4d9b518.chunk.js",
-    "static/css/main.24946ad3.chunk.css",
-    "static/js/main.a92519f5.chunk.js"
+    "static/js/runtime-main.681bacbb.js",
+    "static/js/2.83dd1580.chunk.js",
+    "static/css/main.657b2e7d.chunk.css",
+    "static/js/main.a1ac2970.chunk.js"
   ]
 }
