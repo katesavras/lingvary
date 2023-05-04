@@ -60,11 +60,10 @@ export const Dictionary = () => {
       </div>
 
       <div className="dictionary__main">
+        {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>) ||
+            (!filteredWords.length && <Notice>No such words...</Notice>)}
         <Words words={currentWords} />
       </div>
-
-      {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>) ||
-        (!filteredWords.length && <Notice>No such words...</Notice>)}
 
       <div className="dictionary__footer">
         {filteredWords.length ? (
