@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
 .nav {
-  width: 45%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-right: 5px;
+  }
 }
 
 .nav__home,
@@ -16,15 +19,13 @@
   align-items: center;
   width: 100px;
   font-size: 24px;
-  font-family: 'Poor Story', Arial, sans-serif;
+  margin: 0 15px;
+  font-weight: bold;
   text-decoration: none;
   color: #032c76;
 
   &.active {
     color: #f19307;
-    border: 1px solid #f19307;
     border-radius: 25px;
-    padding: 5px;
-    line-height: 30px;
   }
 }

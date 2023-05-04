@@ -1,5 +1,5 @@
 import React from 'react';
-import picture from './img/vocabulary.jpg';
+import picture from './img/dictionary.png';
 import './style.scss';
 import { NavLink } from 'react-router-dom';
 

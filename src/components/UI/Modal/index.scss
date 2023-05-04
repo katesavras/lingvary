@@ -26,6 +26,10 @@
   box-shadow: 2px 2px 10px grey;
   width: 30%;
 
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
   span {
     color: #aaa;
     float: right;

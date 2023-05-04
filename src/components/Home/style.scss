@@ -40,7 +40,9 @@ $font: 'Poor Story', Arial, sans-serif;
 
 //// X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-
+ .home__wrapper{
+   margin: 0 20px;
+ }
 }
 
 // Small devices (landscape phones, less than 768px)
@@ -48,6 +50,7 @@ $font: 'Poor Story', Arial, sans-serif;
   .home__wrapper {
     display: flex;
     height: 100vh;
+    margin: 0 40px;
     background-position: center bottom 45%;
     background-size: 90% auto;
     background-repeat: no-repeat;

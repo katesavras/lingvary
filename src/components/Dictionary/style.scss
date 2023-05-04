@@ -8,6 +8,12 @@
   justify-content: space-around;
   align-items: center;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px 0;
+    height: auto;
+  }
+
   button {
     border-radius: 30px;
     border: white;
@@ -43,6 +49,10 @@
 .dictionary__main {
   width: 70%;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .dictionary__footer {
@@ -53,4 +63,8 @@
   justify-content: center;
   position: absolute;
   bottom: 0;
+
+  @media (max-width: 768px) {
+     bottom: unset;
+  }
 }
