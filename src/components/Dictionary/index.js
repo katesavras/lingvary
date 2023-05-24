@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './style.scss';
 import { NewWordForm } from './components/NewWordForm';
 import { Words } from './components/Words';
-import { Search } from './components/Search';
+import {Search} from "../UI/Search";
 import { useSelector } from 'react-redux';
 import { Notification } from 'components/UI/Notification';
-import { Pagination } from './components/Pagination';
+import {Pagination} from "../UI/Pagination";
 import { Notice } from 'components/UI/Notice';
 
 export const Dictionary = () => {
@@ -14,7 +14,7 @@ export const Dictionary = () => {
   const [isFormOpened, setIsFormOpened] = useState(false);
   const [isNotification, setIsNotification] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const wordsPerPage = 8;
+  const wordsPerPage = 10;
 
   const filteredWords = words.filter(({ eng, rus }) => {
     return (
@@ -23,11 +23,10 @@ export const Dictionary = () => {
     );
   });
 
-  const indexOfLastWord = currentPage * wordsPerPage;
-  const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-  const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord);
-
-  const paginateHandler = (pageNumber) => setCurrentPage(pageNumber);
+  const visibleWords = filteredWords.slice(
+      (currentPage - 1) * wordsPerPage,
+      currentPage * wordsPerPage
+  );
 
   const searchHandler = (value) => {
     setSearchedValue(value);
@@ -49,29 +48,37 @@ export const Dictionary = () => {
     setIsNotification(false);
   };
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
-    <>
+    <div className="dictionary">
       <div className="dictionary__header">
-        <button onClick={openFormHandler}>Add word</button>
         <p>
-          My dictionary (<span>{words.length}</span>)
+          Dictionary (<span>{words.length}</span>)
         </p>
-        <Search onSearch={searchHandler} />
+        <div>
+          <Search onSearch={searchHandler} />
+          <button onClick={openFormHandler}>Add word</button>
+        </div>
       </div>
+
 
       <div className="dictionary__main">
         {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>) ||
             (!filteredWords.length && <Notice>No such words...</Notice>)}
-        <Words words={currentWords} />
+        <Words words={visibleWords} />
       </div>
 
       <div className="dictionary__footer">
         {filteredWords.length ? (
-          <Pagination
-            wordsPerPage={wordsPerPage}
-            totalWords={filteredWords.length}
-            paginate={paginateHandler}
-          />
+            <Pagination
+                wordsPerPage={wordsPerPage}
+                currentPage={currentPage}
+                totalWords={filteredWords.length}
+                onPageChange={handlePageChange}
+            />
         ) : null}
       </div>
 
@@ -88,6 +95,6 @@ export const Dictionary = () => {
           text="You have just added a word!"
         />
       ) : null}
-    </>
+    </div>
   );
 };

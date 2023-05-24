@@ -11,6 +11,9 @@ export const Navigation = () => {
       <NavLink className="nav__dictionary" to="/dictionary">
         Dictionary
       </NavLink>
+      <NavLink className="nav__my-dictionary" to="/mydictionary">
+        My Dictionary
+      </NavLink>
       <NavLink className="nav__practice" to="/practice">
         Practice
       </NavLink>

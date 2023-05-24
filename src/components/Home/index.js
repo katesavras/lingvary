@@ -8,10 +8,10 @@ export const Home = () => {
     <div className="home__wrapper" style={{ backgroundImage: `url(${picture})` }}>
       <div className="home__content">
         <h1>
-          Learn Words With Lingvary
+          Unlock the power of words with Lingvary
         </h1>
         <p>
-          Lingvary will help you quickly and easily expand your vocabulary.
+          Start your vocabulary adventure today and watch your language skills reach new heights!
         </p>
         <NavLink to="/dictionary">
           <button>

@@ -1,0 +1,22 @@
+.word-filter {
+  display: flex;
+  align-items: center;
+
+  select {
+    position: relative;
+    padding: 8px;
+    font-size: 17px;
+    background-color: var(--button-bg-color);
+    color:  var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border-color: #2196f3;
+      box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+    }
+  }
+}

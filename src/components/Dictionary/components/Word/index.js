@@ -34,8 +34,10 @@ export const Word = ({ word: { eng, rus, key } }) => {
         </Modal>
       ) : null}
       <div className="word">
-        <p className="word__eng">{eng}</p>
-        <p className="word__rus">{rus}</p>
+        <div>
+          <p className="word__eng">{eng}</p>
+          <p className="word__rus">{rus}</p>
+        </div>
         <span className="word__del" onClick={handleClick}>
           &#10005;
         </span>

@@ -20,6 +20,11 @@ export const BurgerMenu = () => {
                      Dictionary
                  </NavLink>
              </li>
+              <li>
+                  <NavLink className="nav__my-dictionary" to="/mydictionary">
+                     My Dictionary
+                  </NavLink>
+              </li>
             <li>
                 <NavLink className="nav__practice" to="/practice">
                     Practice
