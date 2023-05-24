@@ -1,98 +1,102 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.scss';
-import { NewWordForm } from './components/NewWordForm';
-import { Words } from './components/Words';
-import {Search} from "../UI/Search";
-import { useSelector } from 'react-redux';
-import { Notification } from 'components/UI/Notification';
-import {Pagination} from "../UI/Pagination";
-import { Notice } from 'components/UI/Notice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDictionary } from '../../middlewares/dictionary';
+import { WordFilter } from './components/WordFilter';
+import { Pagination } from '../UI/Pagination';
+import { Search } from '../UI/Search';
+import { Notice } from '../UI/Notice';
 
 export const Dictionary = () => {
-  const words = useSelector((state) => state.words);
+  const dispatch = useDispatch();
+  const dictionary = useSelector((state) => state.dictionary);
+  const filterLevel = useSelector((state) => state.filterLevel);
   const [searchedValue, setSearchedValue] = useState('');
-  const [isFormOpened, setIsFormOpened] = useState(false);
-  const [isNotification, setIsNotification] = useState(false);
+  const filteredWords = dictionary.filter(
+    (word) => word.level === filterLevel || filterLevel === '',
+  );
+  const filteredDictionary = filteredWords.filter(({ word, translation }) => {
+    return (
+      word.toLowerCase().includes(searchedValue.toLowerCase()) ||
+      translation.toLowerCase().includes(searchedValue.toLowerCase())
+    );
+  });
   const [currentPage, setCurrentPage] = useState(1);
   const wordsPerPage = 10;
 
-  const filteredWords = words.filter(({ eng, rus }) => {
-    return (
-      eng.toLowerCase().includes(searchedValue.toLowerCase()) ||
-      rus.toLowerCase().includes(searchedValue.toLowerCase())
-    );
-  });
-
-  const visibleWords = filteredWords.slice(
-      (currentPage - 1) * wordsPerPage,
-      currentPage * wordsPerPage
-  );
-
-  const searchHandler = (value) => {
-    setSearchedValue(value);
-  };
-
-  const openFormHandler = () => {
-    setIsFormOpened(true);
-  };
-
-  const closeFormHandler = () => {
-    setIsFormOpened(false);
-  };
-
-  const openNotificationHandler = () => {
-    setIsNotification(true);
-  };
-
-  const closeNotificationHandler = () => {
-    setIsNotification(false);
-  };
+  useEffect(() => {
+    dispatch(getDictionary());
+  }, [dispatch]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
+  const handleFilterChange = () => {
+    setCurrentPage(1);
+  };
+
+  const searchHandler = (value) => {
+    setSearchedValue(value);
+  };
+
+  const visibleWords = filteredDictionary.slice(
+    (currentPage - 1) * wordsPerPage,
+    currentPage * wordsPerPage,
+  );
+
   return (
     <div className="dictionary">
       <div className="dictionary__header">
         <p>
-          Dictionary (<span>{words.length}</span>)
+          Dictionary (<span>{filteredDictionary.length}</span>)
         </p>
         <div className="dictionary__actions">
           <Search onSearch={searchHandler} />
-          <button onClick={openFormHandler}>Add word</button>
+          <WordFilter onFilterChange={handleFilterChange} />
         </div>
       </div>
-
-
       <div className="dictionary__main">
-        {(words.length === 0 && <Notice>Your dictionary is empty.</Notice>) ||
-            (!filteredWords.length && <Notice>No such words...</Notice>)}
-        <Words words={visibleWords} />
+        {(dictionary.length === 0 && <Notice>Your dictionary is empty.</Notice>) ||
+          (!filteredDictionary.length && <Notice>No such words...</Notice>)}
+        {visibleWords.map((item) => {
+          return (
+            <div key={item.key}>
+              <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <div>
+                  <b>{item.word}</b>
+                  <p style={{ margin: '0' }}>{item.translation}</p>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    alignItems: 'end',
+                  }}
+                >
+                  <p style={{ margin: '0' }}>{item.level}</p>
+                  <p style={{ margin: '0' }}>{item.pos}</p>
+                </div>
+              </div>
+              <div className="dictionary__main_line"> </div>
+            </div>
+          );
+        })}
       </div>
-
-      <div className="dictionary__footer">
-        {filteredWords.length ? (
-            <Pagination
-                wordsPerPage={wordsPerPage}
-                currentPage={currentPage}
-                totalWords={filteredWords.length}
-                onPageChange={handlePageChange}
-            />
-        ) : null}
-      </div>
-
-      {isFormOpened && (
-        <NewWordForm
-          onFormClose={closeFormHandler}
-          onWordAdded={openNotificationHandler}
-        />
-      )}
-
-      {isNotification ? (
-        <Notification
-          onClose={closeNotificationHandler}
-          text="You have just added a word!"
+      {filteredDictionary.length ? (
+        <Pagination
+          wordsPerPage={wordsPerPage}
+          currentPage={currentPage}
+          totalWords={filteredDictionary.length}
+          onPageChange={handlePageChange}
         />
       ) : null}
     </div>

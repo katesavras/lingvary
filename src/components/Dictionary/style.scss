@@ -1,10 +1,14 @@
-.dictionary {
+.dictionary{
   width: 90%;
   margin: 0 auto;
+  min-height: 575px;
 
-  &__header {
+  @media (max-width: 768px) {
     width: 90%;
-    margin: 0 auto;
+  }
+
+  &__header{
+    width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-around;
@@ -14,44 +18,16 @@
       flex-direction: column;
       padding: 20px 0;
       height: auto;
-      width: 100%;
     }
 
-    button {
-      padding: 8px 15px;
-      background-color: var(--button-bg-color);
-      color: var(--primary-color);
-      border: 1px solid var(--primary-color);
-      border-radius: 4px;
-      font-size: 18px;
-      text-decoration: none;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
-      @media (max-width: 575.98px) {
-        width: 100%;
-        margin-top: 20px;
-      }
-
-      &:hover {
-        color: var(--button-bg-color);
-        border: 1px solid var(--bg-secondary);
-        background-color: var(--bg-secondary);
-      }
-    }
-
-
-
-    p {
+    p{
       font-size: 24px;
 
       @media (max-width: 768px) {
-        margin-bottom: 20px;
+       margin-bottom: 20px;
       }
     }
   }
-
 
   &__actions {
     display: flex;
@@ -63,18 +39,22 @@
   }
 
 
-  &__main {
-    width: 60%;
+  &__main{
     margin: 0 auto;
+    width: 60%;
 
     @media (max-width: 768px) {
       width: 100%;
     }
-  }
-}
 
-.dictionary__modal_p {
-  text-align: center;
-  font-size: 24px;
+    b{
+      font-size: 18px;
+    }
+
+    &_line{
+      border-bottom: 1px solid #b8b5b5;
+      margin: 5px 0;
+    }
+  }
 }
 

@@ -21,9 +21,9 @@ export const Practice = () => {
   }, [dispatch]);
 
   const showNextWordHandler = (inputValue) => {
-    const isEngWordEqualInputValue = isEnglish && inputValue === cardWords[wordIndex].rus;
+    const isEngWordEqualInputValue = isEnglish && inputValue.toLowerCase() === cardWords[wordIndex].rus.toLowerCase();
     const isRusWordEqualInputValue =
-      !isEnglish && inputValue === cardWords[wordIndex].eng;
+      !isEnglish && inputValue.toLowerCase() === cardWords[wordIndex].eng.toLowerCase();
 
     if (isEngWordEqualInputValue || isRusWordEqualInputValue) {
       setIsMistake(false);
