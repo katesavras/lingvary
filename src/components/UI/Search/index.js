@@ -8,12 +8,15 @@ export const Search = ({ onSearch }) => {
   };
 
   return (
-    <input
-      className="search"
-      placeholder="Search..."
-      type="text"
-      onChange={handleSearch}
-    />
+      <div className='search'>
+        <input
+            className="search__field"
+            placeholder="Search..."
+            type="text"
+            onChange={handleSearch}
+        />
+      </div>
+
   );
 };
 

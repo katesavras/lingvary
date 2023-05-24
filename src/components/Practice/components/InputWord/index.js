@@ -40,7 +40,6 @@ export const InputWord = ({ showNextWord, showHint, isMistake }) => {
       </span>
       <input
         className={isMistake ? ' mistake' : null}
-        autoFocus
         type="text"
         onChange={inputHandler}
         value={inputValue}

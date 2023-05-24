@@ -1,8 +1,8 @@
-.dictionary{
+.dictionary {
   width: 90%;
   margin: 0 auto;
 
-  .dictionary__header {
+  &__header {
     width: 90%;
     margin: 0 auto;
     height: 70px;
@@ -17,17 +17,22 @@
       width: 100%;
     }
 
-
     button {
       padding: 8px 15px;
       background-color: var(--button-bg-color);
-      color:  var(--primary-color);
+      color: var(--primary-color);
       border: 1px solid var(--primary-color);
       border-radius: 4px;
       font-size: 18px;
       text-decoration: none;
       cursor: pointer;
+      white-space: nowrap;
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+      @media (max-width: 575.98px) {
+        width: 100%;
+        margin-top: 20px;
+      }
 
       &:hover {
         color: var(--button-bg-color);
@@ -35,6 +40,8 @@
         background-color: var(--bg-secondary);
       }
     }
+
+
 
     p {
       font-size: 24px;
@@ -45,7 +52,18 @@
     }
   }
 
-  .dictionary__main {
+
+  &__actions {
+    display: flex;
+
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+
+  &__main {
     width: 60%;
     margin: 0 auto;
 
@@ -55,11 +73,8 @@
   }
 }
 
-
-
 .dictionary__modal_p {
   text-align: center;
-  //color: #064676;
   font-size: 24px;
 }
 

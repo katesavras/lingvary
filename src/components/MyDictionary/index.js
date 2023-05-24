@@ -51,7 +51,7 @@ export const MyDictionary = () => {
         <p>
           Dictionary (<span>{filteredDictionary.length}</span>)
         </p>
-        <div className="my-dictionary__wrap">
+        <div className="my-dictionary__actions">
           <Search onSearch={searchHandler} />
           <WordFilter onFilterChange={handleFilterChange} />
         </div>

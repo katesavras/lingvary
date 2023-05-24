@@ -58,7 +58,7 @@ export const Dictionary = () => {
         <p>
           Dictionary (<span>{words.length}</span>)
         </p>
-        <div>
+        <div className="dictionary__actions">
           <Search onSearch={searchHandler} />
           <button onClick={openFormHandler}>Add word</button>
         </div>
